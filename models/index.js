@@ -6,7 +6,7 @@ const Todo = require('./todo');
 
 const mongoose = require('mongoose');
 mongoose.set('debug', true);
-mongoose.connect(process.env.TODOAPPCOLT_DB_URI);
+mongoose.connect(process.env.TODOAPPCOLT_DB_URI, {useNewUrlParser: true });
 
 mongoose.Promise = Promise;
 

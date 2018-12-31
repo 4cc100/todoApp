@@ -1,9 +1,13 @@
 require('dotenv').load();
 
-const express = require('express');
-const app = express();
+const bodyParser = require('body-parser');
+const express    = require('express');
 const todoRoutes = require('./routes/todos');
 
+const app = express();
+
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({extended: true}));
 
 app.get('/', (req, res) => {
   res.send("hello from the root route");
